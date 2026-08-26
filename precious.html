@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>£THREE — Precious Metals & Diamonds Trading</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0A0E27;
+            color: #E0E6FF;
+            line-height: 1.6;
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .glass-card {
+            background: rgba(26, 30, 65, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+        .glass-card h1 { font-size: 32px; margin-bottom: 8px; }
+        .glass-card h1 .highlight { color: #FFD700; }
+        .glass-card .sub { color: #8A94C8; margin-bottom: 24px; }
+
+        .metal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .metal-card {
+            background: rgba(26,30,65,0.3);
+            border: 1px solid #1E2350;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: default;
+        }
+        .metal-card:hover { border-color: #FFD700; transform: translateY(-4px); }
+        .metal-card .icon { font-size: 40px; display: block; margin-bottom: 8px; }
+        .metal-card .name { font-weight: 700; font-size: 18px; color: #FFD700; }
+        .metal-card .price { font-size: 20px; font-weight: 600; color: #fff; margin: 4px 0; }
+        .metal-card .change { font-size: 14px; }
+        .metal-card .change.up { color: #2ECC40; }
+        .metal-card .change.down { color: #FF4D6D; }
+        .metal-card .btn-small {
+            display: inline-block;
+            margin-top: 8px;
+            background: rgba(255,215,0,0.12);
+            color: #FFD700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(255,215,0,0.2);
+        }
+        .metal-card .btn-small:hover {
+            background: rgba(255,215,0,0.2);
+        }
+
+        .trading-pairs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .pair-card {
+            background: rgba(26,30,65,0.2);
+            border: 1px solid #1E2350;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .pair-card .rate { font-size: 18px; font-weight: 700; color: #FFD700; }
+        .pair-card .pair-label { color: #8A94C8; }
+        .pair-card .btn-small {
+            display: inline-block;
+            margin-top: 6px;
+            background: rgba(200,16,46,0.1);
+            color: #FF4D6D;
+            padding: 2px 14px;
+            border-radius: 16px;
+            font-size: 11px;
+            text-decoration: none;
+            border: 1px solid rgba(200,16,46,0.2);
+        }
+        .pair-card .btn-small:hover { background: rgba(200,16,46,0.2); }
+
+        .back-link {
+            display: inline-block; margin-top: 20px; color: #FF4D6D;
+            text-decoration: none; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,215,0,0.1);
+            color: #FFD700;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 800px) {
+            .metal-grid { grid-template-columns: 1fr 1fr; }
+            .trading-pairs { grid-template-columns: 1fr 1fr; }
+            .glass-card { padding: 24px; }
+        }
+        @media (max-width: 450px) {
+            .metal-grid { grid-template-columns: 1fr; }
+            .trading-pairs { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="glass-card">
+        <h1>💎 Precious Metals & <span class="highlight">Diamonds</span> Trading</h1>
+        <p class="sub">Trade gold, silver, platinum, and diamonds with £THREE. Live prices, instant settlement.</p>
+
+        <!-- Металлы -->
+        <h3 style="color: #FFD700; margin-bottom: 12px;">📊 Live Metal Prices</h3>
+        <div class="metal-grid">
+            <div class="metal-card">
+                <span class="icon">🥇</span>
+                <div class="name">Gold (XAU)</div>
+                <div class="price">$2,350.50</div>
+                <div class="change up">▲ +0.8%</div>
+                <a href="#" class="btn-small">Trade XAU/£THREE</a>
+            </div>
+            <div class="metal-card">
+                <span class="icon">🥈</span>
+                <div class="name">Silver (XAG)</div>
+                <div class="price">$28.75</div>
+                <div class="change up">▲ +1.2%</div>
+                <a href="#" class="btn-small">Trade XAG/£THREE</a>
+            </div>
+            <div class="metal-card">
+                <span class="icon">🥉</span>
+                <div class="name">Platinum (XPT)</div>
+                <div class="price">$1,020.30</div>
+                <div class="change down">▼ -0.3%</div>
+                <a href="#" class="btn-small">Trade XPT/£THREE</a>
+            </div>
+            <div class="metal-card">
+                <span class="icon">💎</span>
+                <div class="name">Diamonds</div>
+                <div class="price">$5,200/ct</div>
+                <div class="change up">▲ +2.1%</div>
+                <a href="#" class="btn-small">Trade DIAMOND/£THREE</a>
+            </div>
+        </div>
+
+        <!-- Торговые пары -->
+        <h3 style="color: #FFD700; margin: 24px 0 12px;">🔄 Trading Pairs</h3>
+        <div class="trading-pairs">
+            <div class="pair-card">
+                <div class="pair-label">£THREE → Gold (XAU)</div>
+                <div class="rate">1 £THREE = 0.000042 XAU</div>
+                <a href="#" class="btn-small">Swap £THREE → XAU</a>
+            </div>
+            <div class="pair-card">
+                <div class="pair-label">£THREE → Silver (XAG)</div>
+                <div class="rate">1 £THREE = 0.00348 XAG</div>
+                <a href="#" class="btn-small">Swap £THREE → XAG</a>
+            </div>
+            <div class="pair-card">
+                <div class="pair-label">£THREE → Platinum (XPT)</div>
+                <div class="rate">1 £THREE = 0.000098 XPT</div>
+                <a href="#" class="btn-small">Swap £THREE → XPT</a>
+            </div>
+            <div class="pair-card">
+                <div class="pair-label">£THREE → Diamonds</div>
+                <div class="rate">1 £THREE = 0.000019 ct</div>
+                <a href="#" class="btn-small">Swap £THREE → DIAMOND</a>
+            </div>
+            <div class="pair-card" style="border-color: #FFD700; background: rgba(255,215,0,0.05);">
+                <div class="pair-label">Gold → £THREE</div>
+                <div class="rate">1 XAU = 23,809 £THREE</div>
+                <a href="#" class="btn-small" style="background: rgba(255,215,0,0.12); color: #FFD700; border-color: rgba(255,215,0,0.3);">Swap XAU → £THREE</a>
+            </div>
+            <div class="pair-card" style="border-color: #FFD700; background: rgba(255,215,0,0.05);">
+                <div class="pair-label">Silver → £THREE</div>
+                <div class="rate">1 XAG = 287.5 £THREE</div>
+                <a href="#" class="btn-small" style="background: rgba(255,215,0,0.12); color: #FFD700; border-color: rgba(255,215,0,0.3);">Swap XAG → £THREE</a>
+            </div>
+        </div>
+
+        <div style="background: rgba(200,16,46,0.05); border: 1px solid rgba(200,16,46,0.15); border-radius: 12px; padding: 16px; margin: 16px 0;">
+            <p style="color: #8A94C8; font-size: 14px; text-align: center;">
+                ⚡ <strong style="color: #FFD700;">Instant settlement</strong> on Solana. 
+                All trades are backed by audited smart contracts. 
+                <span style="color: #FF4D6D;">0.1%</span> trading fee.
+            </p>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to £THREE Home</a>
+    </div>
+</div>
+
+</body>
+</html>
