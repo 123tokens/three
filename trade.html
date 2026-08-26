@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>£THREE — Trade & Swap</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0A0E27;
+            color: #E0E6FF;
+            line-height: 1.6;
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .glass-card {
+            background: rgba(26, 30, 65, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+        .glass-card h1 { font-size: 32px; margin-bottom: 8px; }
+        .glass-card h1 .highlight { color: #FF4D6D; }
+        .glass-card .sub { color: #8A94C8; margin-bottom: 24px; }
+
+        .swap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .swap-card {
+            background: rgba(26,30,65,0.3);
+            border: 1px solid #1E2350;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            text-decoration: none;
+            color: #E0E6FF;
+        }
+        .swap-card:hover { border-color: #FF4D6D; transform: translateY(-4px); }
+        .swap-card .icon { font-size: 28px; display: block; margin-bottom: 6px; }
+        .swap-card .name { font-weight: 600; font-size: 15px; }
+        .swap-card .desc { font-size: 12px; color: #5A649A; }
+
+        .back-link {
+            display: inline-block; margin-top: 20px; color: #FF4D6D;
+            text-decoration: none; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        .pair-badge {
+            display: inline-block;
+            background: rgba(200,16,46,0.1);
+            color: #FF4D6D;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 800px) {
+            .swap-grid { grid-template-columns: 1fr 1fr; }
+            .glass-card { padding: 24px; }
+        }
+        @media (max-width: 450px) {
+            .swap-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="glass-card">
+        <h1>Trade & <span class="highlight">Swap</span> £THREE</h1>
+        <p class="sub">10+ DEXs and aggregators for the best price</p>
+
+        <div class="swap-grid">
+            <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="swap-card">
+                <span class="icon">🔄</span>
+                <span class="name">Jupiter</span>
+                <span class="desc">Best price aggregator</span>
+                <span class="pair-badge">SOL → £THREE</span>
+            </a>
+            <a href="https://www.geckoterminal.com/solana/pools/YOUR_THREE_USDC_POOL" target="_blank" class="swap-card">
+                <span class="icon">🌊</span>
+                <span class="name">Meteora</span>
+                <span class="desc">£THREE/USDC pool</span>
+                <span class="pair-badge">USDC → £THREE</span>
+            </a>
+            <a href="https://app.uniswap.org/swap?outputCurrency=uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="swap-card">
+                <span class="icon">🦄</span>
+                <span class="name">Uniswap</span>
+                <span class="desc">Ethereum • Wormhole</span>
+                <span class="pair-badge">ETH → £THREE</span>
+            </a>
+            <a href="https://opensea.io/token/solana/uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="swap-card">
+                <span class="icon">🖼️</span>
+                <span class="name">OpenSea</span>
+                <span class="desc">Direct purchase</span>
+                <span class="pair-badge">Card → £THREE</span>
+            </a>
+            <a href="https://app.raydium.io/swap/?outputMint=uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="swap-card">
+                <span class="icon">☀️</span>
+                <span class="name">Raydium</span>
+                <span class="desc">Solana DEX</span>
+                <span class="pair-badge">SOL → £THREE</span>
+            </a>
+            <a href="https://orca.so/swap?inputMint=So11111111111111111111111111111111111111112&outputMint=uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="swap-card">
+                <span class="icon">🐋</span>
+                <span class="name">Orca</span>
+                <span class="desc">Concentrated liquidity</span>
+                <span class="pair-badge">SOL → £THREE</span>
+            </a>
+            <a href="https://www.binance.com/en/convert" target="_blank" class="swap-card">
+                <span class="icon">🟡</span>
+                <span class="name">Binance Convert</span>
+                <span class="desc">Fiat → £THREE</span>
+                <span class="pair-badge">GBP → £THREE</span>
+            </a>
+            <a href="https://www.kraken.com/" target="_blank" class="swap-card">
+                <span class="icon">🐙</span>
+                <span class="name">Kraken</span>
+                <span class="desc">UK regulated exchange</span>
+                <span class="pair-badge">GBP → £THREE</span>
+            </a>
+            <a href="https://www.gemini.com/" target="_blank" class="swap-card">
+                <span class="icon">🔮</span>
+                <span class="name">Gemini</span>
+                <span class="desc">FCA registered</span>
+                <span class="pair-badge">GBP → £THREE</span>
+            </a>
+            <a href="https://1inch.io/" target="_blank" class="swap-card">
+                <span class="icon">🔄</span>
+                <span class="name">1inch</span>
+                <span class="desc">Multi-chain aggregator</span>
+                <span class="pair-badge">Any → £THREE</span>
+            </a>
+            <a href="#" class="swap-card" style="border-color: #FFD700; background: rgba(255,215,0,0.05);">
+                <span class="icon">💎</span>
+                <span class="name">Precious Metals</span>
+                <span class="desc">Gold/Silver → £THREE</span>
+                <span class="pair-badge">Metals → £THREE</span>
+            </a>
+            <a href="precious.html" class="swap-card" style="border-color: #FF4D6D; background: rgba(200,16,46,0.1); grid-column: span 4;">
+                <span class="icon">🏆</span>
+                <span class="name">💎 Trade Gold, Silver, Platinum & Diamonds →</span>
+                <span class="desc">Visit the dedicated Precious Metals Trading Page</span>
+            </a>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to £THREE Home</a>
+    </div>
+</div>
+
+</body>
+</html>
