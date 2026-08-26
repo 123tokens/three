@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>£THREE — Buy with Card, SWIFT, SEPA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0A0E27;
+            color: #E0E6FF;
+            line-height: 1.6;
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        .glass-card {
+            background: rgba(26, 30, 65, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+        .glass-card h1 { font-size: 32px; margin-bottom: 8px; }
+        .glass-card h1 .highlight { color: #FF4D6D; }
+        .glass-card .sub { color: #8A94C8; margin-bottom: 24px; }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .method-card {
+            background: rgba(26,30,65,0.3);
+            border: 1px solid #1E2350;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            text-decoration: none;
+            color: #E0E6FF;
+        }
+        .method-card:hover { border-color: #FF4D6D; transform: translateY(-4px); }
+        .method-card .icon { font-size: 32px; display: block; margin-bottom: 8px; }
+        .method-card .name { font-weight: 600; }
+        .method-card .desc { font-size: 13px; color: #5A649A; }
+
+        .back-link {
+            display: inline-block; margin-top: 20px; color: #FF4D6D;
+            text-decoration: none; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        @media (max-width: 700px) {
+            .method-grid { grid-template-columns: 1fr 1fr; }
+            .glass-card { padding: 24px; }
+        }
+        @media (max-width: 450px) {
+            .method-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="glass-card">
+        <h1>Buy <span class="highlight">£THREE</span></h1>
+        <p class="sub">Choose your preferred payment method</p>
+
+        <div class="method-grid">
+            <a href="https://opensea.io/token/solana/uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="method-card">
+                <span class="icon">💳</span>
+                <span class="name">Card (Visa/MC)</span>
+                <span class="desc">via OpenSea • Instant</span>
+            </a>
+            <a href="#" class="method-card" style="border-color: #C8102E; background: rgba(200,16,46,0.1);">
+                <span class="icon">🏦</span>
+                <span class="name">SWIFT</span>
+                <span class="desc">International wire • 1-3 days</span>
+            </a>
+            <a href="#" class="method-card" style="border-color: #C8102E; background: rgba(200,16,46,0.1);">
+                <span class="icon">🇪🇺</span>
+                <span class="name">SEPA</span>
+                <span class="desc">EU bank transfer • 1 day</span>
+            </a>
+            <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="method-card">
+                <span class="icon">🔄</span>
+                <span class="name">Jupiter Swap</span>
+                <span class="desc">Any crypto → £THREE</span>
+            </a>
+            <a href="https://www.geckoterminal.com/solana/pools/YOUR_THREE_USDC_POOL" target="_blank" class="method-card">
+                <span class="icon">🌊</span>
+                <span class="name">Meteora Pool</span>
+                <span class="desc">£THREE/USDC pool</span>
+            </a>
+            <a href="https://app.uniswap.org/swap?outputCurrency=uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="method-card">
+                <span class="icon">🦄</span>
+                <span class="name">Uniswap</span>
+                <span class="desc">Ethereum • Wormhole</span>
+            </a>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to £THREE Home</a>
+    </div>
+</div>
+
+</body>
+</html>
