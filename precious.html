@@ -17,7 +17,7 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
         .glass-card {
-            background: rgba(26, 30, 65, 0.5);
+            background: rgba(26, 30, 65, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
@@ -38,7 +38,7 @@
             background: rgba(26,30,65,0.3);
             border: 1px solid #1E2350;
             border-radius: 16px;
-            padding: 20px;
+            padding: 20px 12px;
             text-align: center;
             transition: 0.3s;
             cursor: default;
@@ -61,9 +61,7 @@
             text-decoration: none;
             border: 1px solid rgba(255,215,0,0.2);
         }
-        .metal-card .btn-small:hover {
-            background: rgba(255,215,0,0.2);
-        }
+        .metal-card .btn-small:hover { background: rgba(255,215,0,0.2); }
 
         .trading-pairs {
             display: grid;
@@ -94,11 +92,28 @@
         }
         .pair-card .btn-small:hover { background: rgba(200,16,46,0.2); }
 
-        .back-link {
-            display: inline-block; margin-top: 20px; color: #FF4D6D;
-            text-decoration: none; font-weight: 500;
+        .contract-box {
+            background: rgba(200,16,46,0.05);
+            border: 1px solid rgba(200,16,46,0.15);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #8A94C8;
+            font-family: 'Courier New', monospace;
         }
-        .back-link:hover { text-decoration: underline; }
+        .contract-box .addr { color: #FFD700; }
+        .contract-box .copy-btn {
+            background: transparent; border: none; color: #5A649A;
+            cursor: pointer; font-size: 13px; font-family: 'Segoe UI', sans-serif;
+        }
+        .contract-box .copy-btn:hover { color: #FFD700; }
+        .contract-box .solscan-link {
+            color: #5A649A; text-decoration: none; font-size: 13px;
+            font-family: 'Segoe UI', sans-serif; margin-left: 8px;
+        }
+        .contract-box .solscan-link:hover { color: #fff; }
 
         .badge {
             display: inline-block;
@@ -110,6 +125,12 @@
             text-transform: uppercase;
         }
 
+        .back-link {
+            display: inline-block; margin-top: 20px; color: #FF4D6D;
+            text-decoration: none; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+
         @media (max-width: 800px) {
             .metal-grid { grid-template-columns: 1fr 1fr; }
             .trading-pairs { grid-template-columns: 1fr 1fr; }
@@ -118,6 +139,7 @@
         @media (max-width: 450px) {
             .metal-grid { grid-template-columns: 1fr; }
             .trading-pairs { grid-template-columns: 1fr; }
+            .contract-box { font-size: 11px; }
         }
     </style>
 </head>
@@ -128,7 +150,6 @@
         <h1>💎 Precious Metals & <span class="highlight">Diamonds</span> Trading</h1>
         <p class="sub">Trade gold, silver, platinum, and diamonds with £THREE. Live prices, instant settlement.</p>
 
-        <!-- Металлы -->
         <h3 style="color: #FFD700; margin-bottom: 12px;">📊 Live Metal Prices</h3>
         <div class="metal-grid">
             <div class="metal-card">
@@ -136,64 +157,69 @@
                 <div class="name">Gold (XAU)</div>
                 <div class="price">$2,350.50</div>
                 <div class="change up">▲ +0.8%</div>
-                <a href="#" class="btn-small">Trade XAU/£THREE</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Trade XAU/£THREE</a>
             </div>
             <div class="metal-card">
                 <span class="icon">🥈</span>
                 <div class="name">Silver (XAG)</div>
                 <div class="price">$28.75</div>
                 <div class="change up">▲ +1.2%</div>
-                <a href="#" class="btn-small">Trade XAG/£THREE</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Trade XAG/£THREE</a>
             </div>
             <div class="metal-card">
                 <span class="icon">🥉</span>
                 <div class="name">Platinum (XPT)</div>
                 <div class="price">$1,020.30</div>
                 <div class="change down">▼ -0.3%</div>
-                <a href="#" class="btn-small">Trade XPT/£THREE</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Trade XPT/£THREE</a>
             </div>
             <div class="metal-card">
                 <span class="icon">💎</span>
                 <div class="name">Diamonds</div>
                 <div class="price">$5,200/ct</div>
                 <div class="change up">▲ +2.1%</div>
-                <a href="#" class="btn-small">Trade DIAMOND/£THREE</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Trade DIAMOND/£THREE</a>
             </div>
         </div>
 
-        <!-- Торговые пары -->
         <h3 style="color: #FFD700; margin: 24px 0 12px;">🔄 Trading Pairs</h3>
         <div class="trading-pairs">
             <div class="pair-card">
                 <div class="pair-label">£THREE → Gold (XAU)</div>
                 <div class="rate">1 £THREE = 0.000042 XAU</div>
-                <a href="#" class="btn-small">Swap £THREE → XAU</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Swap £THREE → XAU</a>
             </div>
             <div class="pair-card">
                 <div class="pair-label">£THREE → Silver (XAG)</div>
                 <div class="rate">1 £THREE = 0.00348 XAG</div>
-                <a href="#" class="btn-small">Swap £THREE → XAG</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Swap £THREE → XAG</a>
             </div>
             <div class="pair-card">
                 <div class="pair-label">£THREE → Platinum (XPT)</div>
                 <div class="rate">1 £THREE = 0.000098 XPT</div>
-                <a href="#" class="btn-small">Swap £THREE → XPT</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Swap £THREE → XPT</a>
             </div>
             <div class="pair-card">
                 <div class="pair-label">£THREE → Diamonds</div>
                 <div class="rate">1 £THREE = 0.000019 ct</div>
-                <a href="#" class="btn-small">Swap £THREE → DIAMOND</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small">Swap £THREE → DIAMOND</a>
             </div>
             <div class="pair-card" style="border-color: #FFD700; background: rgba(255,215,0,0.05);">
                 <div class="pair-label">Gold → £THREE</div>
                 <div class="rate">1 XAU = 23,809 £THREE</div>
-                <a href="#" class="btn-small" style="background: rgba(255,215,0,0.12); color: #FFD700; border-color: rgba(255,215,0,0.3);">Swap XAU → £THREE</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small" style="background: rgba(255,215,0,0.12); color: #FFD700; border-color: rgba(255,215,0,0.3);">Swap XAU → £THREE</a>
             </div>
             <div class="pair-card" style="border-color: #FFD700; background: rgba(255,215,0,0.05);">
                 <div class="pair-label">Silver → £THREE</div>
                 <div class="rate">1 XAG = 287.5 £THREE</div>
-                <a href="#" class="btn-small" style="background: rgba(255,215,0,0.12); color: #FFD700; border-color: rgba(255,215,0,0.3);">Swap XAG → £THREE</a>
+                <a href="https://jup.ag/swap/SOL-uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="btn-small" style="background: rgba(255,215,0,0.12); color: #FFD700; border-color: rgba(255,215,0,0.3);">Swap XAG → £THREE</a>
             </div>
+        </div>
+
+        <div class="contract-box">
+            📜 Contract: <span class="addr">uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV</span>
+            <button onclick="navigator.clipboard.writeText('uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV')" class="copy-btn">📋 Copy</button>
+            <a href="https://solscan.io/token/uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV" target="_blank" class="solscan-link">🔍 Solscan</a>
         </div>
 
         <div style="background: rgba(200,16,46,0.05); border: 1px solid rgba(200,16,46,0.15); border-radius: 12px; padding: 16px; margin: 16px 0;">
